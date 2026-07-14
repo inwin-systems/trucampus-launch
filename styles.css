@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark;
+  --navy: #071a33;
+  --ink: #f4f8ff;
+  --muted: #a9bad1;
+  --line: rgba(190, 216, 246, 0.16);
+  --blue: #79b8ff;
+  --mint: #8ee0c2;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--navy);
+  font-family: 'DM Sans', sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  background:
+    radial-gradient(circle at 82% 18%, rgba(52, 122, 190, 0.28), transparent 32rem),
+    radial-gradient(circle at 15% 78%, rgba(42, 160, 140, 0.13), transparent 28rem),
+    linear-gradient(125deg, transparent 0 58%, rgba(255, 255, 255, 0.025) 58% 58.2%, transparent 58.2%);
+}
+
+.shell { width: min(1120px, calc(100% - 48px)); min-height: 100vh; margin: 0 auto; display: flex; flex-direction: column; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; letter-spacing: -0.03em; }
+.brand-mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; color: var(--navy); background: var(--mint); font-size: 1rem; }
+.status { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.78rem; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 5px rgba(142, 224, 194, 0.12); }
+.hero { width: min(780px, 100%); margin: auto 0; padding: 9vh 0 12vh; }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 26px; color: var(--mint); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.eyebrow span { display: block; width: 22px; height: 1px; background: var(--mint); }
+h1 { max-width: 780px; margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(3.2rem, 7.5vw, 6.2rem); line-height: 0.99; letter-spacing: -0.075em; }
+h1 em { color: var(--blue); font-style: normal; }
+.intro { max-width: 520px; margin: 31px 0 34px; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.18rem); line-height: 1.65; }
+.signup-form { display: flex; width: min(560px, 100%); padding: 6px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); }
+.form-fields { display: flex; min-width: 0; flex: 1; }
+.signup-form input { min-width: 0; width: 50%; flex: 1; padding: 13px 10px; border: 0; outline: 0; color: var(--ink); background: transparent; font: inherit; }
+.signup-form input + input { border-left: 1px solid var(--line); }
+.signup-form input::placeholder { color: #7890ad; }
+.signup-form button { padding: 13px 18px; border: 0; border-radius: 10px; color: var(--navy); background: var(--mint); font: inherit; font-weight: 700; cursor: pointer; transition: transform 160ms ease, background 160ms ease; }
+.signup-form button:hover { background: #b3f0dc; transform: translateY(-1px); }
+.signup-form button span { display: inline-block; margin-left: 8px; font-size: 1.1rem; }
+.form-note { margin: 12px 0 0 4px; color: #7890ad; font-size: 0.78rem; }
+.signals { display: flex; gap: 0; margin-top: 92px; }
+.signals div { min-width: 170px; padding: 0 28px; border-left: 1px solid var(--line); }
+.signals div:first-child { padding-left: 0; border-left: 0; }
+.signals strong, .signals span { display: block; }
+.signals strong { margin-bottom: 5px; font-family: 'Space Grotesk', sans-serif; font-size: 0.93rem; }
+.signals span { color: var(--muted); font-size: 0.78rem; }
+.footer { display: flex; justify-content: space-between; padding: 25px 0 30px; border-top: 1px solid var(--line); color: #7890ad; font-size: 0.76rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 620px) {
+  .shell { width: min(100% - 32px, 1120px); }
+  .nav { padding: 22px 0; }
+  .status { font-size: 0.7rem; }
+  .hero { padding: 10vh 0 11vh; }
+  h1 { font-size: clamp(3rem, 15vw, 5rem); }
+  .signup-form { display: block; padding: 8px; }
+  .form-fields { display: block; }
+  .signup-form input, .signup-form button { display: block; width: 100%; }
+  .signup-form input + input { border-top: 1px solid var(--line); border-left: 0; }
+  .signup-form input { padding: 14px 12px; }
+  .signals { display: grid; gap: 20px; margin-top: 62px; }
+  .signals div, .signals div:first-child { padding: 0 0 0 16px; border-left: 1px solid var(--line); }
+  .footer { gap: 12px; flex-direction: column; }
+}
