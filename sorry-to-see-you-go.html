@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="You have unsubscribed from TruCampus updates." />
+    <meta name="theme-color" content="#071a33" />
+    <title>Sorry to see you go — TruCampus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell message-shell">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="TruCampus home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span>TruCampus</span>
+        </a>
+        <span class="status"><span class="status-dot"></span>Launching soon</span>
+      </nav>
+      <section class="message" aria-labelledby="page-title">
+        <div class="message-icon message-icon-muted" aria-hidden="true">−</div>
+        <div class="eyebrow"><span></span> Subscription updated</div>
+        <h1 id="page-title">Sorry to see you go.</h1>
+        <p class="intro">You’ve been unsubscribed from TruCampus updates. Thanks for giving us a chance, and we wish you all the best.</p>
+        <a class="back-link" href="/">Back to TruCampus <span aria-hidden="true">→</span></a>
+      </section>
+      <footer class="footer">
+        <span>© <span id="year">2026</span> TruCampus</span>
+        <span>Something meaningful is coming.</span>
+      </footer>
+    </main>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
